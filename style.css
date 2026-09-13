@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #f5f3ee;
+  --paper-raised: #ede9e0;
+  --ink: #211f1c;
+  --ink-soft: #524d44;
+  --gold: #a97f1f;
+  --gold-dark: #7c5c15;
+  --teal: #2f5d62;
+  --rule: #d9d3c4;
+  --max-width: 700px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+a { color: var(--teal); text-decoration-color: rgba(47,93,98,0.35); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--teal); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 3px; }
+
+h1, h2, h3 {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 2.9rem); font-weight: 700; }
+h2 { font-size: 1.5rem; margin-top: 2.2em; }
+h3 { font-size: 1.15rem; margin-top: 1.6em; }
+
+p { margin: 0 0 1.2em; }
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: 0.5em; }
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 1.5rem;
+}
+
+.site-header nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand:hover { text-decoration: none; color: var(--gold-dark); }
+
+.site-header .menu {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.site-header .menu a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.site-header .menu a:hover { color: var(--teal); }
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.eyebrow-plain {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 0.3em;
+}
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.8em;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0 2.5em;
+  border-top: 1px solid var(--rule);
+}
+
+.chapter-list li {
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+
+.chapter-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.chapter-list a:hover .chapter-title { color: var(--teal); }
+
+.chapter-num {
+  font-family: 'Source Serif 4', serif;
+  color: var(--gold-dark);
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 1.6em;
+}
+
+.chapter-title { font-weight: 500; flex-grow: 1; }
+.chapter-desc { color: var(--ink-soft); font-size: 0.88rem; display: block; margin-top: 0.15em; }
+
+.callout {
+  background: var(--paper-raised);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.3rem;
+  margin: 1.8em 0;
+  border-radius: 2px;
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6em 0.8em;
+  border-bottom: 1px solid var(--rule);
+}
+
+th { font-family: 'Source Serif 4', serif; font-weight: 600; }
+
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+.page-nav a { text-decoration: none; }
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.site-footer a { color: var(--ink-soft); }
+
+details {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.9em 0;
+}
+
+details summary {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+details p { margin-top: 0.8em; }
