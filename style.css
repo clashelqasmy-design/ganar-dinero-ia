@@ -79,6 +79,83 @@ li { margin-bottom: 0.5em; }
   display: flex;
   gap: 1.2rem;
   font-size: 0.92rem;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+  padding: 0.45em 0.9em 0.45em 2.1em;
+  width: 170px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: width 0.2s ease, border-color 0.15s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--gold);
+  width: 220px;
+}
+
+.search-box input::placeholder { color: var(--ink-soft); }
+
+.search-box svg {
+  position: absolute;
+  left: 0.7em;
+  width: 14px;
+  height: 14px;
+  stroke: var(--ink-soft);
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  width: 320px;
+  max-height: 340px;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  z-index: 20;
+  display: none;
+}
+
+.search-results.open { display: block; }
+
+.search-results a {
+  display: block;
+  padding: 0.7em 1em;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.88rem;
+}
+
+.search-results a:last-child { border-bottom: none; }
+.search-results a:hover { background: var(--paper-raised); color: var(--teal); }
+
+.search-results .no-results {
+  padding: 0.8em 1em;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .search-box input { width: 130px; }
+  .search-box input:focus { width: 150px; }
+  .search-results { width: 260px; }
 }
 
 .site-header .menu a {
@@ -146,17 +223,25 @@ main {
 
 .hero .lede { margin-bottom: 0; }
 
+.main-wide {
+  max-width: 1080px;
+}
+
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem;
-  margin: 2.2em 0 1em;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1.8rem;
+  margin: 2.4em 0 1em;
   padding: 0;
   list-style: none;
 }
 
-@media (max-width: 620px) {
-  .blog-grid { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+}
+
+@media (max-width: 560px) {
+  .blog-grid { grid-template-columns: 1fr; gap: 1.4rem; }
 }
 
 .post-card {
