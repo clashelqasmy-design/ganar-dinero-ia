@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dinero con IA — Guías para ganar dinero con inteligencia artificial</title>
 <meta name="description" content="Blog con guías prácticas y honestas para ganar dinero con inteligencia artificial: herramientas, formas de monetizar, cifras reales y errores a evitar.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -16,30 +16,24 @@
       <a href="formas-de-ganar-dinero.html">Formas de ganar</a>
       <a href="herramientas-para-empezar.html">Herramientas</a>
       <a href="preguntas-frecuentes.html">FAQ</a>
-      <div class="search-box">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11" cy="11" r="7" stroke-width="2"/>
-          <path d="M20 20l-4-4" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <input type="text" id="article-search" placeholder="Buscar artículo…" autocomplete="off">
-        <div class="search-results" id="search-results"></div>
-      </div>
     </div>
   </nav>
 </header>
 
 <main class="main-wide">
-  <div class="hero">
-    <p class="eyebrow-plain">Guías honestas, sin promesas vacías</p>
-    <h1>Ganar dinero con inteligencia artificial, explicado paso a paso</h1>
-    <p class="lede">Artículos prácticos sobre herramientas, formas de monetizar y cifras reales, pensados para quien parte de cero y no sabe por dónde empezar.</p>
-  </div>
+  <div class="page-layout">
+    <div class="content-col">
+      <div class="hero">
+        <p class="eyebrow-plain">Guías honestas, sin promesas vacías</p>
+        <h1>Ganar dinero con inteligencia artificial, explicado paso a paso</h1>
+        <p class="lede">Artículos prácticos sobre herramientas, formas de monetizar y cifras reales, pensados para quien parte de cero y no sabe por dónde empezar.</p>
+      </div>
 
-  <div class="section-heading">
-    <h2>Todos los artículos</h2>
-  </div>
+      <div class="section-heading">
+        <h2>Todos los artículos</h2>
+      </div>
 
-  <ul class="blog-grid">
+      <ul class="blog-grid">
 
     <li>
       <a class="post-card" href="que-es-la-ia.html">
@@ -172,6 +166,22 @@
     </li>
 
   </ul>
+    </div>
+
+    <aside class="sidebar">
+      <div class="search-card">
+        <h3>Buscar un artículo</h3>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <path d="M20 20l-4-4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="article-search" placeholder="Ej: ChatGPT, prompts, herramientas…" autocomplete="off">
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </aside>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -228,7 +238,7 @@
   });
 
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search-box')) {
+    if (!e.target.closest('.search-card')) {
       resultsBox.classList.remove('open');
     }
   });

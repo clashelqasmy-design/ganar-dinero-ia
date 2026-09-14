@@ -82,82 +82,6 @@ li { margin-bottom: 0.5em; }
   align-items: center;
 }
 
-.search-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-box input {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  border: 1px solid var(--rule);
-  border-radius: 100px;
-  padding: 0.45em 0.9em 0.45em 2.1em;
-  width: 170px;
-  background: var(--paper);
-  color: var(--ink);
-  transition: width 0.2s ease, border-color 0.15s ease;
-}
-
-.search-box input:focus {
-  outline: none;
-  border-color: var(--gold);
-  width: 220px;
-}
-
-.search-box input::placeholder { color: var(--ink-soft); }
-
-.search-box svg {
-  position: absolute;
-  left: 0.7em;
-  width: 14px;
-  height: 14px;
-  stroke: var(--ink-soft);
-  pointer-events: none;
-}
-
-.search-results {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  width: 320px;
-  max-height: 340px;
-  overflow-y: auto;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  z-index: 20;
-  display: none;
-}
-
-.search-results.open { display: block; }
-
-.search-results a {
-  display: block;
-  padding: 0.7em 1em;
-  text-decoration: none;
-  color: var(--ink);
-  border-bottom: 1px solid var(--rule);
-  font-size: 0.88rem;
-}
-
-.search-results a:last-child { border-bottom: none; }
-.search-results a:hover { background: var(--paper-raised); color: var(--teal); }
-
-.search-results .no-results {
-  padding: 0.8em 1em;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-}
-
-@media (max-width: 560px) {
-  .search-box input { width: 130px; }
-  .search-box input:focus { width: 150px; }
-  .search-results { width: 260px; }
-}
-
 .site-header .menu a {
   color: var(--ink-soft);
   text-decoration: none;
@@ -224,20 +148,117 @@ main {
 .hero .lede { margin-bottom: 0; }
 
 .main-wide {
-  max-width: 1080px;
+  max-width: 1300px;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .page-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static !important; order: -1; }
+}
+
+.sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.search-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: 1.4rem 1.4rem 1.2rem;
+  box-shadow: 0 8px 24px rgba(33, 31, 28, 0.06);
+}
+
+.search-card h3 {
+  margin: 0 0 0.9em;
+  font-size: 1.05rem;
+}
+
+.search-card .search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-card .search-box input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.7em 0.9em 0.7em 2.3em;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.search-card .search-box input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.search-card .search-box svg {
+  position: absolute;
+  left: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  stroke: var(--gold-dark);
+  pointer-events: none;
+}
+
+.search-results {
+  margin-top: 0.9em;
+  display: none;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.search-results.open { display: flex; }
+
+.search-results a {
+  display: block;
+  padding: 0.6em 0.8em;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.search-results a:hover {
+  border-color: var(--gold);
+  color: var(--teal);
+  background: var(--paper-raised);
+}
+
+.search-results .no-results {
+  padding: 0.6em 0.2em;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
 }
 
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem 1.8rem;
+  gap: 2rem 1.6rem;
   margin: 2.4em 0 1em;
   padding: 0;
   list-style: none;
 }
 
-@media (max-width: 900px) {
-  .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+@media (max-width: 1050px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 560px) {
